@@ -20,7 +20,7 @@
 			<div class="home">
 				<h2>Installation</h2>
 
-				<p>&bull; Just copy laravel.ibecsystems.kz folder from FTP to local machine.</p>
+				<p>&bull; Just clone <code>git@github.com:qwertukg/Laravel-with-Engine.git</code> repository to local machine.</p>
 				<p>&bull; Install and run migrations.</p>
 				<p>&bull; Done.</p>
 
@@ -40,7 +40,7 @@
 
 				<ul class="out-links">
 					<li><a href="http://laravel.com">Official Website</a></li>
-					<li><a href="http://github.com/laravel/laravel">GitHub Repository</a></li>
+					<li><a href="http://github.com/laravel/laravel">Official GitHub Repository</a></li>
 					<li><a href="https://github.com/mobileka/laravel-engine">GitHub Laravel Engine</a></li>
 					<li><a title="login:admin@example.com pass:12345678" href="{{ route('admin_home') }}">Control panel</a></li>
 				</ul>

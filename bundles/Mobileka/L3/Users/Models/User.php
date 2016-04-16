@@ -11,9 +11,19 @@ class User extends Model {
 		'recovery_request_date'
 	);
 
+	public static $accessible = array(
+		'id',
+		'email',
+		'password',
+		'group_id',
+		'name',
+		'enabled_fields_json',
+	);
+
 	public static $rules = array(
-		'email' => 'required|email|unique:users',
-		'password' => 'required|min:8',
+		'email' => 'required|alpha_dash|unique:users',
+		'password' => 'required|min:5',
+		'group_id' => 'required',
 	);
 
 	public function group()
@@ -23,13 +33,19 @@ class User extends Model {
 
 	public function get_fullname()
 	{
-		return $this->name ? : 'Имя не указано';
+		return $this->name ? : $this->email;
+	}
+
+	public function get_enabledFields()
+	{
+		return json_decode($this->enabled_fields_json);
 	}
 
 	public function beforeValidation()
 	{
 		if ($this->exists and $this->password === '')
 		{
+
 			$this->password = $this->original['password'];
 		}
 

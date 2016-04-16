@@ -16,7 +16,7 @@
 
 		<div class="controls">
 			{{ $this->validation($errors->get('email')) }}
-			{{ Form::text('email', Input::old('email', ''), array('class' => 'input-block-level', 'placeholder' => 'Email', 'data-rule-required' => 'true', 'data-rule-email' => 'true')) }}
+			{{ Form::text('email', Input::old('email', ''), array('class' => 'input-block-level', 'placeholder' => 'Login', 'data-rule-required' => 'true', 'data-rule-pattern' => 'true')) }}
 		</div>
 	</div>
 

@@ -1,6 +1,6 @@
 @if ($crud->filters)
 	<p class="text-right">
-		<a href="#" class="btn btn-primary filters-control" title="Скрыть фильтр" data-condition="visible" onClick="return false;">
+		<a href="#" class="btn btn-primary filters-control" title="Скрыть фильтр" data-condition="hidden" onClick="return false;">
 			<i class="icon-minus"></i>
 		</a>
 	</p>

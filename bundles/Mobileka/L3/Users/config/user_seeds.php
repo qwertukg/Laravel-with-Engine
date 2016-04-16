@@ -2,9 +2,10 @@
 
 return array(
 	array(
-		'email' => 'admin@example.com',
-		'password' => '12345678',
+		'email' => 'admin',
+		'password' => 'admin',
 		'group_id' => 1,
 		'name' => 'Администратор',
+		'enabled_fields_json' => '[]',
 	),
 );

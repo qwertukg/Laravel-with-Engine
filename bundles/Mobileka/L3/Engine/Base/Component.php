@@ -251,6 +251,13 @@ abstract class Component
         return $this;
     }
 
+    public function setRow($row)
+    {
+        $this->row = $row;
+
+        return $this;
+    }
+
     /**
      * Translate a value of a component
      *

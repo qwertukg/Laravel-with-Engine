@@ -23,8 +23,7 @@
 
 $environments = array(
 
-  'local' => array('http://laravel.localhost*', '*.localhost'),
-  'ibec' => array('http://laravel.ibecsystems.kz*', '*.ibecsystems.kz'),
+  'local' => array('http://localhost*', '*.localhost'),
 
 );
 
@@ -93,7 +92,7 @@ $paths['uploads'] = 'www/uploads';
                ((((~~              / /'              _.'~bb.--~
                                   ((((          __.-~bb.-~
                                               .'  b .~~
-                                              :bb ,' 
+                                              :bb ,'
                                               ~~~~
 */
 
@@ -128,11 +127,11 @@ foreach ($paths as $name => $path)
 
 /**
  * A global path helper function.
- * 
+ *
  * <code>
  *     $storage = path('storage');
  * </code>
- * 
+ *
  * @param  string  $path
  * @return string
  */
@@ -143,7 +142,7 @@ function path($path)
 
 /**
  * A global path setter function.
- * 
+ *
  * @param  string  $path
  * @param  string  $value
  * @return void

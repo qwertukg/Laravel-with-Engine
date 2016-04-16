@@ -1,3 +1,4 @@
+
 .thumbnail-plupload {
 	display: inline-block;
 	margin: 10px;
@@ -206,7 +207,7 @@ input.no-mb {
 }
 
 .table tr th {
-	white-space: nowrap;
+	/*white-space: nowrap;*/
 }
 
 td.table-actions {

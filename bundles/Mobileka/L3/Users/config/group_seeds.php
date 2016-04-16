@@ -3,17 +3,27 @@
 return array(
 	array(
 		'id' => 1,
-		'name' => 'Администраторы',
+		'name' => 'Администратор',
 		'code' => 'admins'
 	),
 	array(
 		'id' => 2,
-		'name' => 'Контент-Менеджеры',
+		'name' => 'Менеджер',
 		'code' => 'contents'
 	),
 	array(
 		'id' => 3,
-		'name' => 'Пользователи',
-		'code' => 'users'
+		'name' => 'Пользователь бинго',
+		'code' => 'users-bingo'
+	),
+	array(
+		'id' => 4,
+		'name' => 'Пользователь лотерейного терминала',
+		'code' => 'users-terminal'
+	),
+	array(
+		'id' => 5,
+		'name' => 'Пользователь шанс лото',
+		'code' => 'users-chance'
 	),
 );

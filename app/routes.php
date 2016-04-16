@@ -6,7 +6,11 @@ Bundle::start('cook');
 Route::get(admin_uri(), array('as' => 'admin_home', 'uses' => 'users::admin.default@index'));
 
 Route::get('/', array('as' => 'home_index', function() {
-	return View::make('home.index');
+	return Redirect::to_route('admin_home');
+}));
+
+Route::get('/', array('as' => 'home', function() {
+	return Redirect::to_route('admin_home');
 }));
 
 /*

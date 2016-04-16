@@ -12,7 +12,7 @@ RestfulRouter::make()->except('view')->resource(array('submodule' => 'admin', 'b
 
 /* Groups */
 RestfulRouter::make()
-	->except('view')
+	->except('view', 'edit', 'add', 'destroy')
 	->resource(
 		array(
 			'submodule' => 'admin',
@@ -20,3 +20,5 @@ RestfulRouter::make()
 			'controller' => 'groups'
 		)
 	);
+
+RestfulRouter::make()->get('admin/fieldset_form/(:any)', array('as' => 'users_admin_default_fieldset_form', 'uses' => 'users::admin.default@fieldset_form'));

@@ -11,8 +11,8 @@ return array(
 	'permissions' => array(
 
 		'aliases' => array(
-			'(:any)_admin_(:any)' => array('admins'),
-			'admin_home' => array('admins'),
+			'(:any)_admin_(:any)' => array('admins', 'contents', 'users-bingo', 'users-terminal', 'users-chance'),
+			'admin_home' => array('admins', 'contents', 'users-bingo', 'users-terminal', 'users-chance'),
 		),
 
 		'paths' => array(),

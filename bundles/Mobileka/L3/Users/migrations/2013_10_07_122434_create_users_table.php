@@ -11,6 +11,7 @@ class Users_Create_Users_Table {
 			$table->string('password');
 			$table->integer('group_id')->unsigned()->index();
 			$table->string('name');
+			$table->text('enabled_fields_json')->default('[]');
 
 			$table->string('recovery_token');
 			$table->string('recovery_password');

@@ -16,13 +16,7 @@
 			@foreach ($components as $heading => $value)
 				@if ($value->active and !$value->relevantActions or in_array(Controller::$route['action'], $value->relevantActions))
 					<th>
-						@if (in_array($heading, $crud->sortable))
-						<a href="#" data-order="{{ $value->name }}" class="th-sortable">
 							{{ gridLang($crud->languageFile, $heading) }}
-						</a>
-						@else
-							{{ gridLang($crud->languageFile, $heading) }}
-						@endif
 					</th>
 				@endif
 			@endforeach

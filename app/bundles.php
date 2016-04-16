@@ -9,9 +9,10 @@ return array(
 
 	'docs' => array('handles' => 'docs'),
 
-	// Example Application
-	
-	'categories' => array('location' => 'ExampleApp/Categories', 'auto' => true),
-	'articles' => array('location' => 'ExampleApp/Articles', 'auto' => true),
+	// Daily Application
+
+	'bingos' => array('location' => 'App/Bingos', 'auto' => true),
+	'terminals' => array('location' => 'App/Terminals', 'auto' => true),
+	'chances' => array('location' => 'App/Chances', 'auto' => true),
 
 );

@@ -34,6 +34,13 @@
 	<!-- Apple devices Homescreen icon -->
 	<link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-precomposed.png" />
 
+	<style>
+	.table tr th {
+		white-space: normal;
+		vertical-align: top;
+	}
+	</style>
+
 </head>
 
 <body class="theme-darkblue" data-theme="theme-darkblue">

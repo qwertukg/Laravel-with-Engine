@@ -8,7 +8,7 @@
 	<!-- Apple devices fullscreen -->
 	<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-	<title>{{ configValue('application.project_name', 'application.project_name') }} | Войти в панель администратора</title>
+	<title>{{ configValue('application.project_name', 'application.project_name') }} | Вход</title>
 	{{ csrf_meta_tag() }}
 
   {{ Asset::container('engine_assets')->styles() }}
@@ -32,6 +32,11 @@
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+	<style>
+		.login form {
+			 height: 215px;
+		}
+	</style>
 </head>
 <body class="login theme-darkblue">
 	<div class="wrapper">
@@ -41,9 +46,9 @@
 
 			{{ $content }}
 
-			<div class="forget">
+			<!-- <div class="forget">
 				<a href="#"><span>Забыли пароль?</span></a>
-			</div>
+			</div> -->
 		</div>
 	</div>
 

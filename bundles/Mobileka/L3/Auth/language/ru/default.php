@@ -10,7 +10,7 @@ return array(
 		)
 	),
 	'labels' => array(
-		'email' => 'E-mail',
+		'email' => 'Логин',
 		'password' => 'Пароль',
 		'password_confirmation' => 'Повтор пароля',
 	),

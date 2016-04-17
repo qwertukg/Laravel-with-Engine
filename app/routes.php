@@ -10,6 +10,10 @@ Route::get('/', array('as' => 'home_index', function() {
 }));
 
 Route::get('/', array('as' => 'home', function() {
+	if (user()->exists and user()->group->isReportUser)
+	{
+		return Redirect::to_route(user()->homeRoute);
+	}
 	return Redirect::to_route('admin_home');
 }));
 

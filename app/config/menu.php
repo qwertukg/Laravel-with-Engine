@@ -8,13 +8,13 @@ return array(
 				array(
 					'label' => 'Пользователи',
 					'route' => 'users_admin_default_index', //according to routing conventions
-					'icon' => ''
+					'icon' => 'glyphicon-user'
 				),
 				//...
 				array(
-					'label' => 'Категории пользователей',
+					'label' => 'Категории',
 					'route' => 'users_admin_groups_index',
-					'icon' => ''
+					'icon' => 'glyphicon-group'
 				),
 			),
 		),
@@ -24,17 +24,17 @@ return array(
 				array(
 					'label' => 'Бинго',
 					'route' => 'bingos_admin_bingos_index',
-					'icon' => ''
+					'icon' => 'glyphicon-file'
 				),
 				array(
 					'label' => 'Лотерейный терминал',
 					'route' => 'terminals_admin_terminals_index',
-					'icon' => ''
+					'icon' => 'glyphicon-file'
 				),
 				array(
 					'label' => 'Шанс лото',
 					'route' => 'chances_admin_chances_index',
-					'icon' => ''
+					'icon' => 'glyphicon-file'
 				),
 			),
 		),

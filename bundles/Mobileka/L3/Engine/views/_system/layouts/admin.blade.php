@@ -24,13 +24,30 @@
 		};
 
 		@yield('script_vars')
+
+		function startTime() {
+		    var today = new Date();
+		    var h = today.getHours();
+		    var m = today.getMinutes();
+		    var s = today.getSeconds();
+		    m = checkTime(m);
+		    s = checkTime(s);
+		    document.getElementById('clock').innerHTML =
+		    h + ":" + m + ":" + s;
+		    var t = setTimeout(startTime, 500);
+		}
+		function checkTime(i) {
+		    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+		    return i;
+		}
+
 	</script>
 	{{ Asset::container('engine_assets')->scripts() }}
 	@yield('plugins')
 	@yield('scripts')
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="img/favicon.ico" />
+	<link rel="shortcut icon" href="/bundles/engine/admin/img/favicon.ico" />
 	<!-- Apple devices Homescreen icon -->
 	<link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-precomposed.png" />
 
@@ -43,21 +60,21 @@
 
 </head>
 
-<body class="theme-darkblue" data-theme="theme-darkblue">
+<body class="theme-darkblue" data-theme="theme-darkblue" onload="startTime()">
 	<div id="navigation">
 		<div class="container-fluid">
 			<a href="#" class="toggle-nav" rel="tooltip" data-placement="bottom" title="Показать/Скрыть меню"><i class="icon-reorder"></i></a>
 			<a href="{{ URL::to_route('users_admin_default_index') }}" id="brand">{{ configValue('application.project_name', 'application.project_name') }}</a>
 
 			<div class="user">
-				<ul class="icon-nav">
+				<!-- <ul class="icon-nav">
 					<li>
 						<a href="{{ URL::to_action('/' ) }}" title="{{ ___('default', 'go_to_website') }}" rel="tooltip" data-placement="bottom"><i class="icon-share-alt"></i></a>
 					</li>
-				</ul>
+				</ul> -->
 				<div class="dropdown">
 					<a href="#" class="dropdown-toggle dropdown-toggle-username" data-toggle="dropdown">
-						{{{ user()->fullname }}}
+						<small>Вы вошли как</small> {{{ user()->fullname }}}
 					</a>
 
 					<ul class="dropdown-menu pull-right">
@@ -92,8 +109,8 @@
 							<li class='lightred'>
 								<i class="icon-calendar"></i>
 								<div class="details">
-									<span class="big">{{ date('d/m/Y') }}</span>
-									<span>{{ date('l') }}</span>
+									<span class="big" id="clock">{{ date('l') }}</span>
+									<span id="clock">{{ date('d/m/Y') }}</span>
 								</div>
 							</li>
 						</ul>

@@ -78,7 +78,7 @@
 		currentDate = new Date(),
 		monthNames = [ "January", "February", "March", "April", "May", "June",
 		"July", "August", "September", "October", "November", "December" ],
-		dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+		dayNames = ["В","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
 		$el.find(".details .big").html(monthNames[currentDate.getMonth()] + " " + currentDate.getDate() + ", " + currentDate.getFullYear());
 		$el.find(".details span").last().html(dayNames[currentDate.getDay()] + ", " + currentDate.getHours()+":"+ ("0" + currentDate.getMinutes()).slice(-2));
@@ -123,7 +123,7 @@
 
 		if($("#user").length > 0){
 		//ajax mocks
-		$.mockjaxSettings.responseTime = 500; 
+		$.mockjaxSettings.responseTime = 500;
 
 		$.mockjax({
 			url: '/post',
@@ -136,22 +136,22 @@
 			status: 400,
 			statusText: 'Bad Request',
 			response: function(settings) {
-				this.responseText = 'Please input correct value'; 
-			}        
+				this.responseText = 'Please input correct value';
+			}
 		});
-		
+
 		$.mockjax({
 			url: '/status',
 			status: 500,
 			response: function(settings) {
 				this.responseText = 'Internal Server Error';
-			}        
+			}
 		});
-		
+
 		$.mockjax({
 			url: '/groups',
 			response: function(settings) {
-				this.responseText = [ 
+				this.responseText = [
 				{value: 0, text: 'Guest'},
 				{value: 1, text: 'Service'},
 				{value: 2, text: 'Customer'},
@@ -159,10 +159,10 @@
 				{value: 4, text: 'Support'},
 				{value: 5, text: 'Admin'}
 				];
-			}        
+			}
 		});
 	}
-	
+
 	if($.isFunction($.mockjax)){
 		$.mockjax({
 			url: 'post.php',
@@ -253,8 +253,8 @@ if($("#online-users").length > 0){
 	  	label:"Clicks per month",
 	  	data:d1,
 	  	bars: {
-	  		show: true, 
-	  		barWidth: 0.2, 
+	  		show: true,
+	  		barWidth: 0.2,
 	  		order: 1,
 	  		lineWidth : 2
 	  	}
@@ -263,8 +263,8 @@ if($("#online-users").length > 0){
 	  	label:"Referalls per month",
 	  	data:d2,
 	  	bars: {
-	  		show: true, 
-	  		barWidth: 0.2, 
+	  		show: true,
+	  		barWidth: 0.2,
 	  		order: 2
 	  	}
 	  });
@@ -272,8 +272,8 @@ if($("#online-users").length > 0){
 	  	label:"Downloads per month",
 	  	data:d3,
 	  	bars: {
-	  		show: true, 
-	  		barWidth: 0.2, 
+	  		show: true,
+	  		barWidth: 0.2,
 	  		order: 3
 	  	}
 	  });
@@ -304,19 +304,19 @@ if($("#online-users").length > 0){
 	  		data[i] = { label: "Series"+(i+1), data: Math.floor(Math.random()*100)+1 }
 	  	}
 
-	  	$.plot($("#flot-5"), data, 
+	  	$.plot($("#flot-5"), data,
 	  	{
 	  		series: {
-	  			pie: { 
+	  			pie: {
 	  				show: true
 	  			}
 	  		}
 	  	});
 
-	  	$.plot($("#flot-6"), data, 
+	  	$.plot($("#flot-6"), data,
 	  	{
 	  		series: {
-	  			pie: { 
+	  			pie: {
 	  				show: true,
 	  				radius: 1,
 	  				label: {
@@ -335,10 +335,10 @@ if($("#online-users").length > 0){
 	  	});
 
 	// GRAPH 3
-	$.plot($("#flot-7"), data, 
+	$.plot($("#flot-7"), data,
 	{
 		series: {
-			pie: { 
+			pie: {
 				show: true,
 				radius: 1,
 				label: {
@@ -356,10 +356,10 @@ if($("#online-users").length > 0){
 		}
 	});
 
-	$.plot($("#flot-8"), data, 
+	$.plot($("#flot-8"), data,
 	{
 		series: {
-			pie: { 
+			pie: {
 				innerRadius: 0.5,
 				show: true
 			}
@@ -459,7 +459,7 @@ if($('#flot-3').length > 0){
     	plot.setData([ getRandomData() ]);
         // since the axes don't change, we don't need to call plot.setupGrid()
         plot.draw();
-        
+
         setTimeout(update, updateInterval);
     }
 
@@ -505,8 +505,8 @@ if($("#flot-1").length > 0){
 if($("#flot-audience").length > 0){
 	var data = [[1262304000000, 1300], [1264982400000, 2200], [1267401600000, 3600], [1270080000000, 5200], [1272672000000, 4500], [1275350400000, 3900], [1277942400000, 3600], [1280620800000, 4600], [1283299200000, 5300], [1285891200000, 7100], [1288569600000, 7800], [1291241700000, 8195]];
 
-	$.plot($("#flot-audience"), [{ 
-		label: "Visits", 
+	$.plot($("#flot-audience"), [{
+		label: "Visits",
 		data: data,
 		color: "#3a8ce5"
 	}], {
@@ -519,7 +519,7 @@ if($("#flot-audience").length > 0){
 		},
 		series: {
 			lines: {
-				show: true, 
+				show: true,
 				fill: true
 			},
 			points: {
@@ -546,7 +546,7 @@ if($("#flot-audience").length > 0){
 		}
 		else {
 			$("#tooltip").remove();
-			previousPoint = null;            
+			previousPoint = null;
 		}
 	});
 
@@ -555,8 +555,8 @@ if($("#flot-audience").length > 0){
 if($("#flot-hdd").length > 0){
 	var data = [[1364598000000, 10],[1364601600000, 12],[1364605200000, 14],[1364608800000, 14],[1364612400000, 10],[1364616000000, 16],[1364619600000, 18],[1364623200000, 15],[1364626800000, 16],[1364630400000, 18],[1364634000000, 20],[1364637600000, 22],[1364641200000, 24],[1364644800000, 25],[1364648400000, 27],[1364652000000, 31],[1364655600000, 33],[1364659200000, 36],[1364662800000, 37],[1364666400000, 38],[1364670000000, 39],[1364673600000, 42],[1364677200000, 45],[1364680800000, 47],[1364684400000, 50]];
 
-	$.plot($("#flot-hdd"), [{ 
-		label: "HDD usage", 
+	$.plot($("#flot-hdd"), [{
+		label: "HDD usage",
 		data: data,
 		color: "#f36b6b"
 	}], {
@@ -568,7 +568,7 @@ if($("#flot-hdd").length > 0){
 		},
 		series: {
 			lines: {
-				show: true, 
+				show: true,
 				fill: true
 			},
 			points: {
@@ -595,7 +595,7 @@ if($("#flot-hdd").length > 0){
 		}
 		else {
 			$("#tooltip").remove();
-			previousPoint = null;            
+			previousPoint = null;
 		}
 	});
 }
@@ -603,8 +603,8 @@ if($("#flot-hdd").length > 0){
 if($("#flot-cpu").length > 0){
 	var data = [[1364598000000, 50],[1364601600000, 45],[1364605200000, 50],[1364608800000, 40],[1364612400000, 60],[1364616000000, 50],[1364619600000, 40],[1364623200000, 30],[1364626800000, 35],[1364630400000, 55],[1364634000000, 40],[1364637600000, 30],[1364641200000, 45],[1364644800000, 55],[1364648400000, 65],[1364652000000, 40],[1364655600000, 45],[1364659200000, 50],[1364662800000, 55],[1364666400000, 60],[1364670000000, 65],[1364673600000, 70],[1364677200000, 75],[1364680800000, 78],[1364684400000, 80]];
 
-	$.plot($("#flot-cpu"), [{ 
-		label: "CPU usage", 
+	$.plot($("#flot-cpu"), [{
+		label: "CPU usage",
 		data: data,
 		color: "#74ad4b"
 	}], {
@@ -616,7 +616,7 @@ if($("#flot-cpu").length > 0){
 		},
 		series: {
 			lines: {
-				show: true, 
+				show: true,
 				fill: true
 			},
 			points: {
@@ -643,7 +643,7 @@ if($("#flot-cpu").length > 0){
 		}
 		else {
 			$("#tooltip").remove();
-			previousPoint = null;            
+			previousPoint = null;
 		}
 	});
 }
@@ -674,15 +674,15 @@ if($('.flot-line').length > 0){
 
 
 		var options = {
-			series: { 
-				shadowSize: 0 
+			series: {
+				shadowSize: 0
 			},
-			yaxis: { 
-				min: 0, 
-				max: 100 
+			yaxis: {
+				min: 0,
+				max: 100
 			},
-			xaxis: { 
-				show: false 
+			xaxis: {
+				show: false
 			}
 		};
 		var plot = $.plot($(".flot-line"), [ {
@@ -690,7 +690,7 @@ if($('.flot-line').length > 0){
 			data: getRandomData(),
 			lines: {show: false, fill:true},
 			points: {show: false},
-			color: '#fd6e58' 
+			color: '#fd6e58'
 		}], options);
 
 		function update() {
@@ -699,7 +699,7 @@ if($('.flot-line').length > 0){
 				data: getRandomData(),
 				lines: {show: true, fill:true},
 				points: {show: false},
-				color: '#fd6e58' 
+				color: '#fd6e58'
 			}]);
 			plot.draw();
 
@@ -834,7 +834,7 @@ if($("#sico").length > 0){
 
 if($("#simg").length > 0){
 	function formatFlags(state){
-            if (!state.id) return state.text; 
+            if (!state.id) return state.text;
             return "<img style='padding-right:10px;' src='img/demo/flags/" + state.id.toLowerCase() + ".gif'/>" + state.text;
         }
         $("#simg").select2({
@@ -880,7 +880,7 @@ if($("#simg").length > 0){
     					} else {
     						$(this).gmap3({
     							infowindow:{
-    								anchor:marker, 
+    								anchor:marker,
     								options:{content: context.data}
     							}
     						});
@@ -960,21 +960,21 @@ function updateDirections(){
 }
  
 // MENU : ITEM 1
-menu.add("Direction to here", "itemB", 
+menu.add("Direction to here", "itemB",
            function(){
          	    menu.close();
          	    addMarker(false);
            });
  
 // MENU : ITEM 2
-menu.add("Direction from here", "itemA separator", 
+menu.add("Direction from here", "itemA separator",
            function(){
          	    menu.close();
          	    addMarker(true);
            })
  
 // MENU : ITEM 3
-menu.add("Zoom in", "zoomIn", 
+menu.add("Zoom in", "zoomIn",
            function(){
          	    var map = $("#map2").gmap3("get");
          	    map.setZoom(map.getZoom() + 1);
@@ -990,7 +990,7 @@ menu.add("Zoom out", "zoomOut",
            });
  
 // MENU : ITEM 5
-menu.add("Center here", "centerHere", 
+menu.add("Center here", "centerHere",
            function(){
          	      $("#map2").gmap3("get").setCenter(current.latLng);
          	      menu.close();
@@ -1046,7 +1046,7 @@ if($("#map3").length > 0){
 			values:myMarkers,
 			cluster:{
 				radius:100,
-				events:{ // events trigged by clusters 
+				events:{ // events trigged by clusters
 					click: function(cluster){
 						$("#map3").gmap3({
 							map:{

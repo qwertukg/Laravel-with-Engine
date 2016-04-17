@@ -1,9 +1,22 @@
 <?php
 
-RestfulRouter::make()
+if (user()->exists and user()->group->isReportUser and user()->group->reporterLangFile == 'bingos::bingos')
+{
+	RestfulRouter::make()
+		->except('view', 'edit', 'destroy')
+		->resource(array(
+			'submodule' => 'admin',
+			'bundle' => 'bingos',
+			'controller' => 'bingos'
+		));
+}
+else
+{
+	RestfulRouter::make()
 	->except('view')
 	->resource(array(
-		'submodule' => 'admin', 
+		'submodule' => 'admin',
 		'bundle' => 'bingos',
 		'controller' => 'bingos'
 	));
+}

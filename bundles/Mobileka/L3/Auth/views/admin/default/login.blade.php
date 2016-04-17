@@ -16,7 +16,7 @@
 
 		<div class="controls">
 			{{ $this->validation($errors->get('email')) }}
-			{{ Form::text('email', Input::old('email', ''), array('class' => 'input-block-level', 'placeholder' => 'Login', 'data-rule-required' => 'true', 'data-rule-pattern' => 'true')) }}
+			{{ Form::text('email', Input::old('email', ''), array('class' => 'input-block-level', 'placeholder' => 'Логин', 'data-rule-required' => 'true', 'data-rule-pattern' => 'true')) }}
 		</div>
 	</div>
 
@@ -31,8 +31,8 @@
 
 	<div class="submit">
 		<div class="remember">
-			{{ Form::checkbox('remember', 'remember', false, array('class' => 'icheck-me', 'data-skin' => 'square', 'data-color' => 'blue', 'id' => 'remember')) }}
-			{{ Form::label('remember', ___('default', 'remember_me')) }}
+			{{ Form::checkbox('remember', 'remember', true, array('class' => 'icheck-me', 'data-skin' => 'square', 'data-color' => 'blue', 'id' => 'remember')) }}
+			{{ Form::label('remember', 'Запомнить меня') }}
 		</div>
 
 		{{ Form::submit(___('default', 'save'), array('class' => 'btn btn-primary')) }}

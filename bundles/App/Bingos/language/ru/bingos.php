@@ -5,9 +5,9 @@ return array(
 		'admin' => array(
 			'bingos' => array(
 				'titles' => array(
-					'index' => 'Список Bingos',
-					'add' => 'Добавить Bingo',
-					'edit' => 'Изменить Bingo',
+					'index' => 'Список дневных отчетов по Бинго',
+					'add' => 'Добавить отчет по Бинго',
+					'edit' => 'Изменить отчет по Бинго',
 				)
 			)
 		)

@@ -41,6 +41,12 @@ class User extends Model {
 		return json_decode($this->enabled_fields_json);
 	}
 
+	public function get_homeRoute()
+	{
+		$bundleName = substr($this->group->code, 6);
+		return $bundleName."s_admin_".$bundleName."s_index";
+	}
+
 	public function beforeValidation()
 	{
 		if ($this->exists and $this->password === '')

@@ -34,19 +34,20 @@ class Terminal extends BaseModel {
 		'comment',
 		'created_at',
 		'updated_at',
+		'date',
 	);
 
 	public static $rules = array(
-		'vsego_lt' => 'required',
-		'ukrali' => 'required',
-		'remont' => 'required',
-		'magazin_zakrit' => 'required',
-		'net_sveta' => 'required',
-		'problrmy_u_providera' => 'required',
-		'perezd' => 'required',
-		'ostatok_po_kasse' => 'required',
-		'itogo_ostatok' => 'required',
-		//'comment' => 'required',
+		'vsego_lt' => 'required|numeric',
+		'ukrali' => 'required|numeric',
+		'remont' => 'required|numeric',
+		'magazin_zakrit' => 'required|numeric',
+		'net_sveta' => 'required|numeric',
+		'problrmy_u_providera' => 'required|numeric',
+		'perezd' => 'required|numeric',
+		'ostatok_po_kasse' => 'required|numeric',
+		'itogo_ostatok' => 'required|numeric',
+		'date' => 'required',
 	);
 
 	public function user()
@@ -60,7 +61,7 @@ class Terminal extends BaseModel {
 		{
 			foreach (static::$rules as $fieldName => $rule)
 			{
-				if (!in_array($fieldName, user()->enabledFields))
+				if (!in_array($fieldName, user()->enabledFields) and $fieldName != 'date')
 				{
 					unset(static::$rules[$fieldName]);
 				}

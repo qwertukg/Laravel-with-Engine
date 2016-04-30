@@ -5,9 +5,9 @@ return array(
 		'admin' => array(
 			'chances' => array(
 				'titles' => array(
-					'index' => 'Список Chances',
-					'add' => 'Добавить Chance',
-					'edit' => 'Изменить Chance',
+					'index' => '<small>Список дневных отчетов по</small> Шанс лото',
+					'add' => '<small>Добавить отчет по Шанс</small> лото',
+					'edit' => '<small>Изменить отчет по Шанс</small> лото',
 				)
 			)
 		)

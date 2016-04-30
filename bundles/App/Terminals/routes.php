@@ -10,6 +10,16 @@ if (user()->exists and user()->group->isReportUser and user()->group->reporterLa
 			'controller' => 'terminals'
 		));
 }
+elseif (user()->exists and user()->group->code == 'contents')
+{
+	RestfulRouter::make()
+	->except('view', 'add', 'edit', 'destroy')
+	->resource(array(
+		'submodule' => 'admin',
+		'bundle' => 'terminals',
+		'controller' => 'terminals'
+	));
+}
 else
 {
 	RestfulRouter::make()

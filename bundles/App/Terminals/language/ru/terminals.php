@@ -5,9 +5,9 @@ return array(
 		'admin' => array(
 			'terminals' => array(
 				'titles' => array(
-					'index' => 'Список Terminals',
-					'add' => 'Добавить Terminal',
-					'edit' => 'Изменить Terminal',
+					'index' => '<small>Список дневных отчетов по</small> Лотерейному терминалу',
+					'add' => '<small>Добавить отчет по</small> Лотерейному терминалу',
+					'edit' => '<small>Изменить отчет по</small> Лотерейному терминалу',
 				)
 			)
 		)

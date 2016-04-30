@@ -9,7 +9,7 @@ class Terminals_Admin_Terminals_Controller extends BackendController {
 		parent::__construct();
 
 		$this->layout->title = ___('terminals.controllers.admin.terminals.titles', static::$route['action']);
-		
+
 		$this->model = IoC::resolve('TerminalModel');
 
 		$this->with(array(
@@ -17,5 +17,4 @@ class Terminals_Admin_Terminals_Controller extends BackendController {
 		));
 	}
 
-} 
-
+}

@@ -7,6 +7,7 @@
 
 {{-- Ссылка "создать" --}}
 <div class="pull-right">
+	{{ render('engine::excel') }}
 	{{ HTML::link_to_existing_route($crud->requestId . '_add', ___($crud->languageFile, 'add'), array(), array('class' => 'btn btn-teal crud-add-button')) }}
 </div>
 

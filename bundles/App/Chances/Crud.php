@@ -83,6 +83,7 @@ IoC::register('chancesEngineForm', function () use ($model, $lists)
 	}
 
 	$config['components']['comment'] = TextAreaForm::make('comment');
+	$config['components']['date'] = DatepickerForm::make('date');
 
 	return Form::make(
 		$model,
@@ -121,7 +122,9 @@ IoC::register('chancesEngineGrid', function () use ($model, $lists)
 
 	$config['filters']['comment'] = ContainsFilter::make('comment');
 	$config['filters']['created_at'] = DateRangeFilter::make('created_at');
+	$config['filters']['date'] = DateRangeFilter::make('date');
 	$config['components']['created_at'] = ColumnGrid::make('created_at');
+	$config['components']['date'] = ColumnGrid::make('date');
 
 	return Grid::make(
 		$model,

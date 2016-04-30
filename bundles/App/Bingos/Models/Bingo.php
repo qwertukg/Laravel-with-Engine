@@ -32,17 +32,19 @@ class Bingo extends BaseModel {
 		'comment',
 		'created_at',
 		'updated_at',
+		'date',
 	);
 
 	public static $rules = array(
-		'inkassatziya_kupirnik' => 'required',
-		'inkassatziya_kupirnik_b1' => 'required',
-		'inkassatziya_kupirnik_b2' => 'required',
-		'postuplenie_kassa_bingo' => 'required',
-		'postuplenie_kassa_ps' => 'required',
-		'viplata_kassa_bingo' => 'required',
-		'viplata_kassa_ps' => 'required',
-		'ostatok_po_kasse' => 'required',
+		'inkassatziya_kupirnik' => 'required|numeric',
+		'inkassatziya_kupirnik_b1' => 'required|numeric',
+		'inkassatziya_kupirnik_b2' => 'required|numeric',
+		'postuplenie_kassa_bingo' => 'required|numeric',
+		'postuplenie_kassa_ps' => 'required|numeric',
+		'viplata_kassa_bingo' => 'required|numeric',
+		'viplata_kassa_ps' => 'required|numeric',
+		'ostatok_po_kasse' => 'required|numeric',
+		'date' => 'required',
 		//'comment' => 'required',
 	);
 
@@ -57,7 +59,7 @@ class Bingo extends BaseModel {
 		{
 			foreach (static::$rules as $fieldName => $rule)
 			{
-				if (!in_array($fieldName, user()->enabledFields))
+				if (!in_array($fieldName, user()->enabledFields) and $fieldName != 'date')
 				{
 					unset(static::$rules[$fieldName]);
 				}

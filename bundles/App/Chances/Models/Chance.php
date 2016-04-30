@@ -22,12 +22,14 @@ class Chance extends BaseModel {
 		'comment',
 		'created_at',
 		'updated_at',
+		'date',
 	);
 
 	public static $rules = array(
-		'postuplenie_sl' => 'required',
-		'viplata_sl' => 'required',
-		'ostatok' => 'required',
+		'postuplenie_sl' => 'required|numeric',
+		'viplata_sl' => 'required|numeric',
+		'ostatok' => 'required|numeric',
+		'date' => 'required',
 		//'comment' => 'required',
 	);
 
@@ -42,7 +44,7 @@ class Chance extends BaseModel {
 		{
 			foreach (static::$rules as $fieldName => $rule)
 			{
-				if (!in_array($fieldName, user()->enabledFields))
+				if (!in_array($fieldName, user()->enabledFields) and $fieldName != 'date')
 				{
 					unset(static::$rules[$fieldName]);
 				}

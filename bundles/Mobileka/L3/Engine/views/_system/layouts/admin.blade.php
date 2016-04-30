@@ -109,8 +109,8 @@
 							<li class='lightred'>
 								<i class="icon-calendar"></i>
 								<div class="details">
-									<span class="big" id="clock">{{ date('l') }}</span>
-									<span id="clock">{{ date('d/m/Y') }}</span>
+									<span class="big" id="clock">{{ date('H:i:s') }}</span>
+									<span><b>{{ date('d.m.Y') }}</b></span>
 								</div>
 							</li>
 						</ul>
